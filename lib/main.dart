@@ -118,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
+
           Row(
             children: [
               Text(
@@ -127,44 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
               IconButton(
                 icon: const Icon(Icons.settings),
                 onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: Text('수면 시간 설정'),
-                        content: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-
-                            ElevatedButton(
-                              onPressed: () => _selectTime(context, true),
-                              child: Text(
-                                selectedSleepTime != null ? selectedSleepTime!
-                                    .format(context) : 'start',
-                              ),
-                            ),
-
-                            ElevatedButton(
-                              onPressed: () => _selectTime(context, false),
-                              child: Text(
-                                selectedRunningTime != null
-                                    ? selectedRunningTime!.format(context)
-                                    : 'end',
-                              ),
-                            ),
-                          ],
-                        ),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('확인'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
+                  showAlertDialog(context);
                 },
               ),
             ],
