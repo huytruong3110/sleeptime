@@ -109,13 +109,3 @@ fonts:
 
 
 
-dependencies:http: ^0.13.0
-  
-  import 'package:http/http.dart' as http;
-  flutter pub get
-
-
-  dependencies:
-    flutter:
-      sdk: flutter
-    http: ^0.13.3
